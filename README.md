@@ -6,6 +6,7 @@ and radix sort. Input is given on each processor and the
 output is the soted version of data on all processors such that elements at
 processor i are less than elements at processor j for i<j. Let us
 go through every type of sort one by one:
+
 RADIX SORT:
 We start from the right most digit of every data's key in all the processors.
 For each position of digits, 10 buckets ranging from (0-9) are made on every
@@ -39,6 +40,7 @@ are collected on 0th processor and then redistributed to other processors based 
 the same criteria as stated above.
 Finally, we get that all elements are sorted globally and that every element of
 i'th processor is less than j'th processor if i<j.
+
 QUICK SORT:
 In this we first chose a pivot to be the mid element of last processor and then
 broadcast it so that every other processors know the value of pivot.
@@ -64,6 +66,7 @@ For this, we send extra elements from processor 0 to the last processor. The las
 processor sends extra elements to the second last element and so on.
 Now, every processor contains the same number of elements it originally had and
 every element of i'th processor is less than j'th processor if i<j.
+
 MERGE SORT:
 For this we start by a sequential sort locally in each processor by the usual
 sequential merge sort algorithm.
@@ -76,6 +79,7 @@ distributing it to every other processor by using MPI_Scatterv and based
 on the original size of every processor.
 So, now all elemenets are sorted such that every element of i'th processor is less
 than j'th processor if i<j.
+
 The major decisions made were that:
 (1) Sequential algorithms are much more time taking in comparison to parallel
 algorithms. Still all parallel algorithms use some kind of serialization because it
@@ -103,28 +107,36 @@ mid which was left out because there was no partner process for it. So, it shoul
 perform an extra send recieve to the next processor exceptionally.
 SCALABILITY: All sort versions show scalability(almost linear in case of merge &
 quick sort while it is not in radix).
+
 Experiments:
 For number of elements(N)= 2^20(approx. 10,00,000) on each processor
+
 MERGE SORT:
+
 NUMBER OF PROCESSORS Time Taken
 1 1
 4 2
 16 8
 32 17
 64 38
+
 QUICK SORT:
+
 NUMBER OF PROCESSORS Time Taken
 1 1
 4 2
 16 6
 32 13
 64 110
+
 RADIX SORT:
+
 NUMBER OF PROCESSORS Time Taken
 1 4
 4 7
 16 67
 32 180
 64 248
+
 BEST: Merge Sort proved to be fast as compared to other two sorts. So , merge sort
 is kept in BEST.

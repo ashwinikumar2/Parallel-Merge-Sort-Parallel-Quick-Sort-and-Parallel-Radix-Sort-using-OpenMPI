@@ -169,10 +169,10 @@ RADIX SORT:
 BEST: Merge Sort proved to be fast as compared to other two sorts. So , merge sort
 is kept in BEST.
 
-HOW TO RUN:
+HOW TO RUN:\
 make\
 make run
 
 Note: make run will run on 6 processors else we can use\
-mpirun -np x ./output\
+mpirun -np x  ./output\
 where x is number of processors

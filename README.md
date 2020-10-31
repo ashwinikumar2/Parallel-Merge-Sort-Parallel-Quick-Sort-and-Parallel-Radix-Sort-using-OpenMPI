@@ -171,7 +171,7 @@ is kept in BEST.
 
 HOW TO RUN:
 make\
-make run\
+make run
 
 Note: make run will run on 6 processors else we can use\
 mpirun -np x ./output\

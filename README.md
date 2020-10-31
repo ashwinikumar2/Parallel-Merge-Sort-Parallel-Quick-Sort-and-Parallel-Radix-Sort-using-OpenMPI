@@ -170,8 +170,8 @@ BEST: Merge Sort proved to be fast as compared to other two sorts. So , merge so
 is kept in BEST.
 
 HOW TO RUN:
-make
-make run
+make\
+make run\
 
 Note: make run will run on 6 processors else we can use\
 mpirun -np x ./output\

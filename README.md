@@ -138,12 +138,13 @@ Experiments:
 For number of elements(N)= 2^20(approx. 10,00,000) on each processor
 
 MERGE SORT:\
-NUMBER OF PROCESSORS Time Taken\
-1 1\
-4 2\
-16 8\
-32 17\
-64 38
+|NUMBER OF PROCESSORS| Time Taken|
+|-----------------------|-----------------|
+|1| 1|
+|4 |2|
+|16| 8|
+|32| 17|
+|64 |38|
 
 QUICK SORT:
 

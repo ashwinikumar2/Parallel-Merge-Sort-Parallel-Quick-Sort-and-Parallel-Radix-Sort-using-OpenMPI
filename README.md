@@ -148,21 +148,31 @@ MERGE SORT:\
 
 QUICK SORT:
 
-NUMBER OF PROCESSORS Time Taken
-1 1
-4 2
-16 6
-32 13
-64 110
+|NUMBER OF PROCESSORS| Time Taken|
+|----|-----|
+|1| 1|
+|4 |2|
+|16| 6|
+|32| 13|
+|64| 110|
 
 RADIX SORT:
 
-NUMBER OF PROCESSORS Time Taken
-1 4
-4 7
-16 67
-32 180
-64 248
+|NUMBER OF PROCESSORS |Time Taken|
+|------|------|
+|1 |4|
+|4| 7|
+|16| 67|
+|32 |180|
+|64| 248|
 
 BEST: Merge Sort proved to be fast as compared to other two sorts. So , merge sort
 is kept in BEST.
+
+HOW TO RUN:
+make
+make run
+
+Note: make run will run on 6 processors else we can use\
+mpirun -np x ./output\
+where x is number of processors

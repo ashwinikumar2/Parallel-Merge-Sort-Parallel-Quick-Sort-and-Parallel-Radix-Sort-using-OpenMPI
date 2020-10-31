@@ -8,7 +8,7 @@ output is the soted version of data on all processors such that elements at
 processor i are less than elements at processor j for i<j. Let us
 go through every type of sort one by one:
 
-RADIX SORT:
+**RADIX SORT:**
 
 We start from the right most digit of every data's key in all the processors.
 For each position of digits, 10 buckets ranging from (0-9) are made on every
@@ -46,7 +46,7 @@ the same criteria as stated above.
 Finally, we get that all elements are sorted globally and that every element of
 i'th processor is less than j'th processor if i<j.
 
-QUICK SORT:
+**QUICK SORT:**
 
 In this we first chose a pivot to be the mid element of last processor and then
 broadcast it so that every other processors know the value of pivot.
@@ -82,7 +82,7 @@ processor sends extra elements to the second last element and so on.
 Now, every processor contains the same number of elements it originally had and
 every element of i'th processor is less than j'th processor if i<j.
 
-MERGE SORT:
+**MERGE SORT:**
 
 For this we start by a sequential sort locally in each processor by the usual
 sequential merge sort algorithm.
@@ -137,7 +137,7 @@ Experiments:
 
 For number of elements(N)= 2^20(approx. 10,00,000) on each processor
 
-MERGE SORT:\
+**MERGE SORT:**\
 |NUMBER OF PROCESSORS| Time Taken|
 |-----------------------|-----------------|
 |1| 1|
@@ -146,7 +146,7 @@ MERGE SORT:\
 |32| 17|
 |64 |38|
 
-QUICK SORT:
+**QUICK SORT:**\
 
 |NUMBER OF PROCESSORS| Time Taken|
 |----|-----|
@@ -156,7 +156,7 @@ QUICK SORT:
 |32| 13|
 |64| 110|
 
-RADIX SORT:
+**RADIX SORT:**\
 
 |NUMBER OF PROCESSORS |Time Taken|
 |------|------|
@@ -166,13 +166,13 @@ RADIX SORT:
 |32 |180|
 |64| 248|
 
-BEST: Merge Sort proved to be fast as compared to other two sorts. So , merge sort
+**BEST:** Merge Sort proved to be fast as compared to other two sorts. So , merge sort
 is kept in BEST.
 
-HOW TO RUN:\
+**HOW TO RUN:**\
 make\
 make run
 
-Note: make run will run on 6 processors else we can use\
+**Note:** make run will run on 6 processors else we can use\
 mpirun -np x  ./output\
 where x is number of processors
